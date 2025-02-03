@@ -1,42 +1,84 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.container{
+  width: 70%;
+  margin: 3rem auto;
+  background-color: #000;
+  color: #fff;
+  padding: 2rem 2rem 3.5rem 2rem;
+  border-radius: 10px;
+  min-height: 80vh;
+}
+.container h1{
   text-align: center;
+  font-size: calc(1.5rem + 1vw);
+}
+.search-box, .app-body{
+  margin-top: 2rem;
+  width: 80%;
+  margin-left: 10%;
+}
+.search-box form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search-box input{
+  width: 83%;
+  padding: 0.75rem 1rem;
+  font-size: calc(0.3rem + 1vw);
+  border-radius: 5px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+}
+.search-box button{
+  width: 15%;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  font-size: calc(0.25rem + 1vw);
+  cursor: pointer;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 540;
+  color: #000;
+  background-color: #fff;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.app-body{
+  background-color: #fff;
+  color: #000;
+  margin-top: 3rem;
+  border-radius: 7px;
+  padding: 2rem;
+  overflow: hidden;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.app-body h2{
+  font-size: calc(2rem + 1vw);
+  text-transform: uppercase;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-body img{
+ width: calc(70px + 2vw);
+ margin-top: 0.5rem;
+ margin-left: -0.7rem;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-body h3{
+ font-size: calc(1.7rem + 1vw);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.app-body h4{
+ font-size: calc(0.4rem + 1vw);
+ margin-top: 1rem;
 }
 
-.card {
-  padding: 2em;
+.loader{
+  position: absolute;
+  left: calc(50% - 100px);
+  top: calc(50% - 100px);
+}
+.loader img{
+  width: calc(150px + 2vw);
 }
 
-.read-the-docs {
-  color: #888;
+.no-data{
+  text-align: center;
+  margin-top: 18%;
+  font-size: calc(1rem + 1vw);
 }
