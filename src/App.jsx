@@ -42,7 +42,7 @@ const App = () => {
 
         {weatherData !== undefined ? (
           <div className="app-body">
-            <h2>{weatherData.location.name}</h2>
+            <h2>{weatherData.location.name} - <span>{weatherData.location.country}</span></h2>
             <img src={weatherData.current.condition.icon} alt="icon" />
             <h3>{weatherData.current.temp_c}°C</h3>
             <h4>{weatherData.current.condition.text}</h4>
