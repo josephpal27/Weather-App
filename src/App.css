@@ -1,6 +1,6 @@
 .container{
   width: 70%;
-  margin: 3rem auto;
+  margin: 3.8rem auto;
   background-color: #000;
   color: #fff;
   padding: 2rem 2rem 3.5rem 2rem;
@@ -48,7 +48,7 @@
   color: #000;
   margin-top: 3rem;
   border-radius: 7px;
-  padding: 2rem;
+  padding: 3rem 2.5rem;
   overflow: hidden;
 }
 .app-body h2{
