@@ -62,6 +62,7 @@
 }
 .app-body h3{
  font-size: calc(1.7rem + 1vw);
+ margin-top: 0.5rem;
 }
 .app-body h4{
  font-size: calc(0.4rem + 1vw);

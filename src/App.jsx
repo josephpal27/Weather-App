@@ -1,30 +1,33 @@
-import { useState } from 'react'
-import './App.css'
+import './App.css';
+import { useState } from 'react';
+import { toast, ToastContainer } from 'react-toastify';
 
-function App() {
-
-  let [city, setCity] = useState('')
-  let [weatherData, setWeatherData] = useState();
+const App = () => {
+  const [city, setCity] = useState('');
+  const [weatherData, setWeatherData] = useState(undefined);
 
   let checkWeather = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     fetch(`http://api.weatherapi.com/v1/current.json?key=1da33a8c94004a8c96970835250302&q=${city}&aqi=no`)
       .then(res => res.json())
       .then(data => {
-        console.log(data)
-        if (data.error.code == 1006) {
-          alert('City not found')
+        // console.log(data);
+        if (data.error) {
+          toast.error('City Not Found', {
+            autoClose: 2000
+          });
+          setWeatherData(undefined);
         } else {
-          setWeatherData(data)
+          setWeatherData(data);
+          toast.success('Data Fetched Successfully', {
+            autoClose: 2000
+          });
         }
       })
 
     setCity('');
-  }
-
-
-
+  };
 
   return (
     <div>
@@ -37,30 +40,23 @@ function App() {
           </form>
         </div>
 
-        {weatherData != undefined
-
-          ?
-
+        {weatherData !== undefined ? (
           <div className="app-body">
-            <h2>Kolkata</h2>
-            <img src="//cdn.weatherapi.com/weather/64x64/day/122.png" alt="icon" />
-            <h3>25°C</h3>
-            <h4>Last Updated On - 2025-02-03 12:30</h4>
+            <h2>{weatherData.location.name}</h2>
+            <img src={weatherData.current.condition.icon} alt="icon" />
+            <h3>{weatherData.current.temp_c}°C</h3>
+            <h4>{weatherData.current.condition.text}</h4>
+            <h4>Last Updated On - {weatherData.current.last_updated}</h4>
           </div>
-
-          :
-          
+        ) : (
           <div className='no-data'>
             <p>No Data Found</p>
           </div>
-        }
-
-        <div className="loader">
-          <img src="https://media.tenor.com/khzZ7-YSJW4AAAAM/cargando.gif" alt="loader" />
-        </div>
+        )}
       </div>
+      <ToastContainer />
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;
