@@ -69,15 +69,6 @@
  margin-top: 1rem;
 }
 
-.loader{
-  position: absolute;
-  left: calc(50% - 100px);
-  top: calc(50% - 100px);
-}
-.loader img{
-  width: calc(150px + 2vw);
-}
-
 .no-data{
   text-align: center;
   margin-top: 18%;
